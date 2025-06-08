@@ -20,7 +20,7 @@ export function App() {
       <div class="d-flex flex">
         <SideBar></SideBar>
         <div class="d-flex flex">
-
+          <button onClick={() => window.ipcChannel.sendMessage({msg: 'blub'})}>Send message</button>
         </div>
       </div>
     </div>

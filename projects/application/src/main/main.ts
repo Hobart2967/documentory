@@ -1,6 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import * as nodeDiskInfo from 'node-disk-info';
-import * as fs from 'fs';
+import * as path from 'path';
 import { CommunicationService } from './services/communication.service';
 
 app.whenReady().then(() => {
@@ -8,10 +8,13 @@ app.whenReady().then(() => {
     title: 'Main window',
     width: 1280,
     height: 720,
-    backgroundColor: '#222220' // TODO: Make this dependent on System theme.
+    backgroundColor: '#222220', // TODO: Make this dependent on System theme.,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   });
 
-   ipcMain.on('request', (event, args) => {
+   ipcMain.on('request', (event, ...args) => {
       try {
         const communicationService = new CommunicationService();
         communicationService.receiveMessage(event, args);
