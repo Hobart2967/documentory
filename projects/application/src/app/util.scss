@@ -1,0 +1,52 @@
+
+.d-flex { display: flex; }
+
+.flex { flex: 1; }
+
+.row {
+  flex-flow: row;
+}
+
+.column {
+  flex-flow: column;
+}
+
+@for $i from 1 through 100 {
+  .g-#{$i*4} { gap: #{$i*4}px; }
+
+  .p-#{$i*4} { padding: #{$i*4}px; }
+  .pb-#{$i*4} { padding-bottom: #{$i*4}px; }
+  .pt-#{$i*4} { padding-top: #{$i*4}px; }
+  .pr-#{$i*4} { padding-right: #{$i*4}px; }
+  .pl-#{$i*4} { padding-left: #{$i*4}px; }
+
+  .ph-#{$i*4} {
+    padding-left: #{$i*4}px;
+    padding-right: #{$i*4}px;
+  }
+
+  .pv-#{$i*4} {
+    padding-top: #{$i*4}px;
+    padding-bottom: #{$i*4}px;
+  }
+
+}
+
+.ai-center {
+  align-items: center;
+}
+.fw-wrap {
+  flex-wrap: wrap;
+}
+
+.fw-nowrap {
+  flex-wrap: wrap;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: end;
+}

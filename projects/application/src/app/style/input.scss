@@ -1,0 +1,16 @@
+input {
+  display: block;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: var(--input-foreground);
+  background: var(--input-background);
+  border: 1px solid var(--input-outline-start);
+  box-shadow: 0 1px 0px 0px var(--input-outline-end);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--input-active-outline-start);
+  box-shadow: 0 0 0px 4px var(--input-active-outline-end);
+}

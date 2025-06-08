@@ -1,0 +1,21 @@
+.ribbon-bar__button {
+  display: flex;
+  gap: 16px;
+  color: #b8b8b6;
+  border-radius: 5px;
+  padding: 10px 24px;
+
+
+  &:hover {
+    background-color: #454543;
+
+  }
+
+  &__icon {
+    font-size: 18px;
+  }
+
+  &__text {
+
+  }
+}

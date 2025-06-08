@@ -1,0 +1,59 @@
+.menu {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  margin: 0;
+  padding: 4px 0 5px;
+
+  background: rgba(239, 239, 239, 0.95);
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.34);
+  border-radius: 7px;
+
+  color: rgba(0, 0, 0, 0.75);
+  font-family: -apple-system, Lucida Grande;
+  font-size: 14px;
+  line-height: 15px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    z-index: -1;
+  }
+
+  hr {
+    border: none;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 6px 0px 5px;
+    padding: 0;
+  }
+
+  &__item {
+    display: block;
+    padding: 1px 20px;
+
+
+    &::after {
+      vertical-align: 2px;
+      content: attr(label);
+    }
+
+    &:hover {
+      background: #4195fa;
+
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+}
