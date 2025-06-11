@@ -1,0 +1,17 @@
+{
+	"extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+		"moduleResolution": "bundler",
+		"types": [
+			"vite-plugin-solid-svg/types-component-solid",
+			"node"
+		],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  },
+  "include": [
+    "src"
+  ]
+}

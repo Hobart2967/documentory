@@ -1,0 +1,37 @@
+type: solution
+
+solution:
+  name: Documentory
+  sources:
+    - type: yarn-workspace
+
+tasks:
+  start:
+    description: Start an application
+    children:
+      shell:
+        description: Start the webapp
+        jobs:
+          - name: Start application
+            type: command
+            command: yarn workspace @documentory/shell run start
+
+  init:
+    description: Initializes the repository, including symlinks, packages and more.
+    jobs:
+      - name: Check for existence of @codewyre/wyrekit
+        type: command
+        command: node -e 'console.log(require("fs").existsSync("./wyrekit"))'
+        storeResultAs: 'wyrekitExists'
+
+      - name: Check if @codewyre/wyrekit should be cloned
+        type: condition
+        condition: ${wyrekitExists.value} === false
+        jobs:
+          - name: Clone wyrekit
+            type: command
+            command: git clone git@github.com:codewyre/wyrekit ./wyrekit
+
+      - name: Install packages
+        type: command
+        command: yarn --ignore-engines --force

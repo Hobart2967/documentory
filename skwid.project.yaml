@@ -1,0 +1,16 @@
+type: project
+
+tasks:
+  build:
+    description: Builds this project
+    jobs:
+      - name: Run Build
+        type: command
+        command: yarn build
+
+  lint:
+    description: Lints this project
+    jobs:
+      - name: Run Linting
+        type: command
+        command: ./node_modules/.bin/eslint build

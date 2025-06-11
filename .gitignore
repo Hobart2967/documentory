@@ -1,1 +1,30 @@
-node_modules
+**/node_modules
+**/dist*
+
+# Do not use NPM! This is a yarn repo
+**/package-lock.json
+.localpackage.js
+
+/library
+/wyrekit
+**/.terraform
+**/*.key
+**/*.crt
+**/*.srl
+**/*.pem
+**/*.pfx
+**/*.csr
+.env
+
+# Ignore tsoa outputs
+application/**/api-spec
+application/**/api-client/src
+application/**/openapitools.json
+application/*/*/src/build
+
+infrastructure/application/config.json
+infrastructure/application/my-localstack-data
+.dist/db
+.dist/db-seed
+.gitignore
+infrastructure/application/api-configs/*.conf
